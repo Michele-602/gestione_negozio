@@ -6,15 +6,55 @@ package gestioneanimali;
 
 /**
  *
- * @author filip
+ * @author michele
  */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        GestioneNegozio negozio = new GestioneNegozio();
+        negozio.aggiungiAnimale(new Cane("Carlos", 5, "Grande"));
+        negozio.aggiungiAnimale(new Gatto("Garfield", 2, "Siamese"));
+        negozio.aggiungiAnimale(new Leone("Simba", 4, true));
+        negozio.aggiungiAnimale(new Pesce("Bob", 1, "Salata"));
+        negozio.aggiungiAnimale(new Cane("Charlie", 3, "Media"));
+
+        System.out.println("lista animali");
+        
+        negozio.stampaAnimali();
+
+        System.out.println("Tot animali: " + negozio.contaAnimali());
+
+        // ricerca
+        System.out.println("cerca animale");
+        Animale trovato = negozio.cercaPerNome("Carlos");
+
+        if (trovato != null) {
+            System.out.println("trovato: " + trovato);
+            System.out.println("verso: " + trovato.verso());
+        } else {
+            System.out.println("Animale non trovato.");
+        }
+
+        for (Animale a : new Animale[]{
+                new Cane("Hamsik", 2, "Piccola"),
+                new Gatto("Luna", 1, "Persiano"),
+                new Leone("Pencho", 6, true),
+                new Pesce("Dory", 2, "Dolce")
+        }) {
+            System.out.println(a.descrizione());
+            System.out.println("verso: " + a.verso());
+        }
+
+        System.out.println("==================");
+        if (trovato instanceof Cane) {
+            ((Cane) trovato).abbaia();
+        }
+
+        System.out.println("=== tolgo Bob ===");
+        negozio.rimuoviAnimale("Bob");
+
+        System.out.println("==========");
+        negozio.stampaAnimali();
     }
-    
 }
