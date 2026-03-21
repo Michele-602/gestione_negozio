@@ -17,18 +17,23 @@ public class MainTest {
         Pesce p = new Pesce("Andrea Bocelli", 1, "Salata");
         Leone l = new Leone("Gerry Scotti", 4, true);
 
-        Animale[] animali = {gatto, cane, pesce, leone};
+        Animale[] animali = {g, c, p, l};
 
-        //polimorfismo
         for (Animale a : animali) {
             System.out.println(a.descrizione());
             System.out.println("Verso: " + a.verso());
-        }
 
-        //casting 
-        ((Gatto) gatto).fusa();
-        ((Cane) cane).abbaia();
-        ((Pesce) pesce).nuota();
-        ((Leone) leone).corsa();
-    }
+            if (a instanceof Gatto) {
+                ((Gatto) a).fusa();
+            } 
+            else if (a instanceof Cane) {
+                ((Cane) a).abbaia();
+            } 
+            else if (a instanceof Pesce) {
+                ((Pesce) a).nuota();
+            } 
+            else if (a instanceof Leone) {
+                ((Leone) a).corsa();
+            }
+        }
 }
