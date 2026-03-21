@@ -12,10 +12,10 @@ public class MainTest {
 
     public static void main(String[] args) {
 
-        Animale gatto = new Gatto("Charlie Kirk", 3, "Siamese");
-        Animale cane = new Cane("Paolo Ruffini", 5, "Grande");
-        Animale pesce = new Pesce("Andrea Bocelli", 1, "Salata");
-        Animale leone = new Leone("Gerry Scotti", 4, true);
+        Gatto g = new Gatto("Charlie Kirk", 3, "Siamese");
+        Cane c = new Cane("Paolo Ruffini", 5, "Grande");
+        Pesce p = new Pesce("Andrea Bocelli", 1, "Salata");
+        Leone l = new Leone("Gerry Scotti", 4, true);
 
         Animale[] animali = {gatto, cane, pesce, leone};
 
