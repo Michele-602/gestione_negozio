@@ -18,7 +18,7 @@ public class Main {
         negozio.aggiungiAnimale(new Leone("Simba", 4, true));
         negozio.aggiungiAnimale(new Pesce("Bob", 1, "Salata"));
         negozio.aggiungiAnimale(new Cane("Charlie", 3, "Media"));
-
+        negozio.aggiungiAnimale(new Cane("Joe bastianich", 3, "Grande"));
         System.out.println("lista animali");
         
         negozio.stampaAnimali();
